@@ -2,6 +2,21 @@
 
 <ul>
   <% @list.movies.each do |movie| %>
-    <li><p><%= movie.title %></p></li>
+
+    <div class="card-trip">
+      <img src="<%= movie.poster_url %>">
+      <%# <img src="https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"> %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= movie.title %></h2>
+          <p><%= movie.overview %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= movie.rating %></h2>
+      </div>
+    </div>
+
   <% end %>
 </ul>
+
+<%= link_to "Add new bookmark", new_list_bookmark_path(@list.id) %>
+<%= link_to "Back to lists", lists_path %>
