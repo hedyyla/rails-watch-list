@@ -1,6 +1,8 @@
 <ul>
   <% @lists.each do |list| %>
     <li><h1><%= link_to "#{list.name}", list_path(list) %></h1></li>
+    <li><%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+</li>
   <% end %>
 </ul>
 
